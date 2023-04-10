@@ -30,7 +30,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     env = loadEnv(mode, root)
   }
   return {
-    base: env.VITE_BASE_PATH,
+    base: '/manage',
     plugins: [
       Vue(),
       VueJsx(),
@@ -101,7 +101,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     },
     build: {
       minify: 'terser',
-      outDir: env.VITE_OUT_DIR || 'dist',
+      outDir: '../vue3-init-clothes/dist/manage',
       sourcemap: env.VITE_SOURCEMAP === 'true' ? 'inline' : false,
       // brotliSize: false,
       terserOptions: {
@@ -116,7 +116,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       proxy: {
         // 选项写法
         '/api': {
-          target: 'http://127.0.0.1:8000',
+          target: 'http://www.niceshoesonly.cn:3000',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, '')
         }

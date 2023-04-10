@@ -7,7 +7,7 @@ import type {
 } from './types'
 
 export const getCountApi = (): Promise<IResponse<AnalysisTotalTypes[]>> => {
-  return request.get({ url: '/analysis/total' })
+  return request.get({ url: '/manageAnalysisTotal' })
 }
 
 export const getUserAccessSourceApi = (): Promise<IResponse<UserAccessSource[]>> => {
